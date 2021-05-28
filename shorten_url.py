@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+File to shorten the url and serialize/de-serialize the data.
+Author: Santhosh Balasa
+Email: santhosh.kbr@gmail.com
+Date: 28/May/2021
+"""
+
 import string
 import pickle
 import random
@@ -5,6 +13,7 @@ import random
 
 # Global
 PICKLED_FILE = "cached_urls.pickle"
+
 
 def deserialize_data():
     """
@@ -16,6 +25,7 @@ def deserialize_data():
         data = pickle.load(p)
     return data
 
+
 def serialize_data(data):
     """
     Function to serialize the data via reading the pickle file.
@@ -25,6 +35,7 @@ def serialize_data(data):
     with open(PICKLED_FILE, "wb") as p:
         pickle.dump(data, p, protocol=pickle.HIGHEST_PROTOCOL)
 
+
 def get_cached_urls():
     """
     Function to get all the shortened urls.
@@ -32,6 +43,7 @@ def get_cached_urls():
         list_of_urls (dict): List of cached urls
     """
     return deserialize_data()
+
 
 def store_cached_urls(list_of_short_urls, short_url, long_url):
     """
@@ -44,7 +56,8 @@ def store_cached_urls(list_of_short_urls, short_url, long_url):
     list_of_short_urls.update({short_url: long_url})
     serialize_data(list_of_short_urls)
 
-def encode(long_url):    
+
+def encode(long_url):
     """
     Function to shorten the long url.
     Args:
