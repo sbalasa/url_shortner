@@ -1,5 +1,5 @@
 # url_shortner
-This is a Web service to shorten a very long url to a shorter one
+This is a Web service to shorten a very long url.
 
 ## To Prepare Environment
 #### Run:
