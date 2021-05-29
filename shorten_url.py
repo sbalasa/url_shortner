@@ -67,9 +67,7 @@ def encode(long_url):
     """
     list_of_short_urls = get_cached_urls()
     if long_url not in list_of_short_urls.values():
-        res = ""
-        for _ in range(8):
-            res += random.choice(string.ascii_letters + string.digits)
+        res += "".join(random.choices(string.ascii_letters + string.digits, k=8))
         list_of_short_urls[res] = long_url
         store_cached_urls(list_of_short_urls, res, long_url)
         return res
