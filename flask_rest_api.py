@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Flask runner to start the url shortening REST API service.
+Author: Santhosh Balasa
+Email: santhosh.kbr@gmail.com
+Date: 1/June/2021
+"""
+
 from shorten_url import encode
 from flask_restful import Api, Resource
 from flask import Flask, request, jsonify
