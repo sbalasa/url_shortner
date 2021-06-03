@@ -72,6 +72,6 @@ def encode(long_url):
         store_cached_urls(list_of_short_urls, res, long_url)
         return res
     else:
-        for k, v in list_of_short_urls.items():
-            if v == long_url:
-                return k
+        for short, long in list_of_short_urls.items(): # To keep it unique
+            if long == long_url:
+                return short
